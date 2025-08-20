@@ -1,9 +1,9 @@
 import React from 'react';
 
 export default function page() {
-  return (
-    <section className="ourService py-16 relative z-10" style={{}}>
-        <div className="max-w-7xl mx-auto px-6" style={{}}>
+  return (  
+<section className="ourService py-16 relative z-10" style={{ height: '70vh', display: 'flex', justifyContent: 'center' }}>
+        <div className="max-w-7xl mx-auto px-6" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <h2 className="text-4xl font-bold text-center mb-12 text-white">Our Services</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
                 <div className="bg-gray-900 p-8 rounded-2xl border-gray-800">

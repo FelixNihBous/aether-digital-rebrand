@@ -1,0 +1,9 @@
+/* Fix overlapping sections on Android/mobile devices */
+@media screen and (max-width: 768px) {
+  .ourService {
+    height: auto !important;
+    min-height: 130vh !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+}

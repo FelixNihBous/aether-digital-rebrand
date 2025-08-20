@@ -1,27 +1,39 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import '../css/Header.css'
-import Link from 'next/link'
 
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
   const navBar = [
     {
       name: "Service",
-      direct: "/our-service"
+      direct: "service"
     },
     {
-      name: "Portofolio",
-      direct: "/portfolio"
+      name: "Portfolio",
+      direct: "portfolio"
     },
     {
       name: "About",
-      direct: "/about"
+      direct: "about"
     },
     {
       name: "Contact",
-      direct: "/contact"
+      direct: "contact"
     }
   ]
+
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+    setIsMenuOpen(false);
+  };
 
   return (
     <div className='header-LandingPage'>
@@ -29,12 +41,44 @@ export default function Header() {
         <Image src="/Gambar_WhatsApp_2025-08-15_pukul_08.17.55_86843d8c-removebg-preview.png" alt="Aether Digital Logo" width={60} height={60} />
         <p className="brand-text" style={{color: '#64badf'}}>Aether Digital</p>
       </div>
-      <div className="navBar">
+      
+      {/* Desktop Navigation */}
+      <div className="navBar desktop-nav">
         {navBar.map((item, index) => (
-          <Link key={index} href={item.direct} className="nav-link" style={{color: '#AABBCC'}}>
+          <button
+            key={index}
+            className="nav-link"
+            style={{color: '#AABBCC', background: 'none', border: 'none', cursor: 'pointer'}}
+            onClick={() => scrollToSection(item.direct)}
+          >
             {item.name}
-          </Link>
+          </button>
         ))}
+      </div>
+
+      {/* Mobile Burger Menu */}
+      <div className="mobile-nav">
+        <button 
+          className="burger-menu"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span className={`burger-line ${isMenuOpen ? 'open' : ''}`}></span>
+          <span className={`burger-line ${isMenuOpen ? 'open' : ''}`}></span>
+          <span className={`burger-line ${isMenuOpen ? 'open' : ''}`}></span>
+        </button>
+        
+        <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
+          {navBar.map((item, index) => (
+            <button
+              key={index}
+              className="mobile-nav-link"
+              onClick={() => scrollToSection(item.direct)}
+            >
+              {item.name}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   )
