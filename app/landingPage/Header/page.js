@@ -1,3 +1,5 @@
+"use client"
+
 import Image from 'next/image'
 import React, { useState } from 'react'
 import '../css/Header.css'
@@ -46,7 +48,6 @@ export default function Header() {
         <p className="brand-text" style={{color: '#64badf'}}>Aether Digital</p>
       </div>
       
-      {/* Desktop Navigation */}
       <div className="navBar desktop-nav">
         {navBar.map((item, index) => (
           <button
@@ -60,7 +61,6 @@ export default function Header() {
         ))}
       </div>
 
-      {/* Mobile Burger Menu */}
       <div className="mobile-nav">
         <button 
           className="burger-menu"
