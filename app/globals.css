@@ -24,3 +24,7 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.animated-gradient-bg {
+  background-color: #1a1a2e;
+}

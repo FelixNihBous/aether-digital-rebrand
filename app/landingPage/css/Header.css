@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+.brandText-Logo {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.navBar {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-link {
+    cursor: pointer;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #64badf !important;
+}
+
+.header-LandingPage {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px;
+    background: #1a1a2e; /* Changed to solid color */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    .header-LandingPage {
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px 20px;
+    }
+    
+    .navBar {
+        gap: 20px;
+    }
+}
