@@ -28,3 +28,11 @@ body {
 .animated-gradient-bg {
   background-color: #1a1a2e;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 100px; /* Adjust based on your header height */
+}

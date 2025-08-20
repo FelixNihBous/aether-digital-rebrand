@@ -31,8 +31,9 @@ export default function Body() {
             e.target.style.transform = 'translateY(0)';
             e.target.style.boxShadow = 'none';
           }}
+          onClick={() => document.getElementById('service').scrollIntoView({ behavior: 'smooth' })}
         >
-          Get a free consultation
+          Explore Our Services
         </Button>
       </div>
     </div>

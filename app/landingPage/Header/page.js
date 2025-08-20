@@ -7,6 +7,10 @@ export default function Header() {
   
   const navBar = [
     {
+      name: "Home",
+      direct: "home"
+    },
+    {
       name: "Service",
       direct: "service"
     },
@@ -20,7 +24,7 @@ export default function Header() {
     },
     {
       name: "Contact",
-      direct: "contact"
+      direct: "chooseus"
     }
   ]
 

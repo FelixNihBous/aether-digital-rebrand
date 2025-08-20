@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function ChooseUs() {
   return (
-<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '70vh' }}>
+<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <section className="py-16 bg-[#1a1a2e] relative z-10">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1">
