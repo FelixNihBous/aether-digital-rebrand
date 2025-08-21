@@ -5,6 +5,8 @@ import Header from './Header/page'
 import Body from './Body/page'
 import ChooseUs from '../choose-us/page'
 import OurService from '../our-service/page'
+import Testimoni from '../testimoni/page'
+import Projects from '../projects/page'
 
 export default function landingPage() {
   return (
@@ -19,8 +21,16 @@ export default function landingPage() {
         <OurService />
       </section>
 
+      <section id="projects" style={{ padding: '80px 0'}}>
+        <Projects />
+      </section>
+
       <section id="chooseus" style={{ padding: '80px 0'}}>
         <ChooseUs />
+      </section>
+
+      <section id="testimoni">
+        <Testimoni />
       </section>
     </>
   )

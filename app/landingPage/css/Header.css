@@ -127,6 +127,10 @@ body {
     .desktop-nav {
         display: none;
     }
+
+    .brand-text {
+        visibility: hidden;
+    }
     
     .mobile-nav {
         display: block;
