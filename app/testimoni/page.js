@@ -1,120 +1,139 @@
 "use client"
 
+import React, { useRef } from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { LeftOutlined, RightOutlined } from '@ant-design/icons';
+
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+import '../swiper/style.css';
+
+// import required modules
+import { Pagination, Navigation } from 'swiper/modules';
 import { Image } from 'antd';
-import React, { useState } from 'react';
-function TestimonialCard({ name, title, quote, avatar }) {
-    return ( 
-        <div className="flex-none w-full md:w-1/2 lg:w-1/3 px-4">
-            <div className="bg-gray-900 p-8 rounded-2xl shadow-lg border border-gray-800 flex flex-col items-center text-center">
-                <Image
-                    src={avatar}
-                    alt={`${name}'s avatar`}
-                    className="w-20 h-20 rounded-full mb-4 object-cover border-4 border-[#3873f3]"
-                />
-                <p className="text-gray-300 italic mb-4">&quot;{quote}&quot;</p>
-                <h3 className="text-xl font-semibold text-white">{name}</h3>
-                <p className="text-gray-400 text-sm">{title}</p>
+
+export default function Testimoni() {
+    const testimonialsData = [
+        {
+            name: "Jane Doe",
+            title: "CEO, InnovateTech",
+            quote: "AetherDigital brought our vision to life with incredible speed and attention to detail. The new website has completely transformed our online presence!",
+            avatar: "https://placehold.co/100x100/3873f3/ffffff?text=JD"
+        },
+        {
+            name: "John Smith",
+            title: "Founder, GreenLeaf Co.",
+            quote: "The SEO and design work from AetherDigital has been a game-changer for our business. Our organic traffic has doubled, and the new design has received incredible feedback from our customers.",
+            avatar: "https://placehold.co/100x100/3873f3/ffffff?text=JS"
+        },
+        {
+            name: "Emily Chen",
+            title: "Creative Director, Studio X",
+            quote: "We needed a partner who could translate our creative vision into a functional web application, and AetherDigital did just that. Their technical expertise is unmatched.",
+            avatar: "https://placehold.co/100x100/3873f3/ffffff?text=EC"
+        },
+        {
+            name: "David Lee",
+            title: "Marketing Manager, Global Corp",
+            quote: "Our marketing campaigns are much more effective now, thanks to the stunning landing pages built by AetherDigital. They are a reliable and innovative team.",
+            avatar: "https://placehold.co/100x100/3873f3/ffffff?text=DL"
+        },
+        {
+            name: "Sarah Miller",
+            title: "Entrepreneur",
+            quote: "I've worked with several developers, but none have matched the quality and efficiency of AetherDigital. Highly recommended for anyone looking to build a professional web presence.",
+            avatar: "https://placehold.co/100x100/3873f3/ffffff?text=SM"
+        },
+        {
+            name: "Michael Brown",
+            title: "Product Lead, Alpha Corp",
+            quote: "The team at AetherDigital is professional and highly skilled. They delivered a product that exceeded our expectations on time and on budget.",
+            avatar: "https://placehold.co/100x100/3873f3/ffffff?text=MB"
+        },
+    ];
+    const swiperRef = useRef(null);
+
+    return (
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px', overflow: 'hidden' }}>
+            <h1 className="font=bold" style={{ fontSize: '50px' }}>Our Projects</h1>
+            <Swiper
+                onSwiper={(swiper) => {
+                    swiperRef.current = swiper;
+                }}
+                spaceBetween={30}
+                pagination={{
+                    el: '.swiper-pagination',
+                    clickable: true,
+                }}
+                navigation={{
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                }}
+                modules={[Pagination, Navigation]}
+                className="mySwiper"
+                // Add this breakpoints prop to make it responsive
+                breakpoints={{
+                    768: {
+                        slidesPerView: 1,
+                        spaceBetween: 30,
+                    },
+                    1280: {
+                        slidesPerView: 3,
+                        spaceBetween: 50,
+                    }
+                }}
+            >
+                {testimonialsData.map((testiomomoal, index) => (
+                    <SwiperSlide key={index} style={{ display: 'flex', flexDirection: 'column', backgroundColor: '#101828', borderRadius: '20px', padding: '20px', gap: '10px' }}>
+                        <Image src={testiomomoal.avatar} alt={testiomomoal.title} style={{ borderRadius: '20px' }} />
+                        <h2 className="" style={{color: 'white', fontSize: '14px' }}><strong>{testiomomoal.name}</strong></h2>
+                        <p className="" style={{color: 'white', fontSize: '12px'}}><strong>{testiomomoal.title}</strong></p>
+                        <p className="" style={{color: 'white', fontSize: '12px'}}>{testiomomoal.quote}</p>
+                    </SwiperSlide>
+                ))}
+
+                <div className="swiper-pagination"></div>
+                <div style={{ position: 'absolute', bottom: '20px', left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: '20px', zIndex: 10 }}>
+                    <div className="swiper-button-prev" style={{ position: 'static', cursor: 'pointer' }} onClick={() => swiperRef.current.slidePrev()}></div>
+                    <div className="swiper-button-next" style={{ position: 'static', cursor: 'pointer' }} onClick={() => swiperRef.current.slideNext()}></div>
+                </div>
+            </Swiper>
+            <div className="" style={{ display: 'flex', flexDirection: 'row', gap: '50px' }}>
+                <button style={{
+                    marginTop: '40px',
+                    padding: '12px 24px',
+                    fontSize: '16px',
+                    fontWeight: 'bold',
+                    color: '#ffffff',
+                    backgroundColor: '#101828',
+                    border: 'none',
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                    width: '100px',
+                    transition: 'background-color 0.3s ease',
+                }} onClick={() => swiperRef.current.slidePrev()}>
+                    <LeftOutlined />
+                </button>
+                <button style={{
+                    marginTop: '40px',
+                    padding: '12px 24px',
+                    fontSize: '16px',
+                    fontWeight: 'bold',
+                    color: '#ffffff',
+                    backgroundColor: '#101828',
+                    border: 'none',
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                    width: '100px',
+                    transition: 'background-color 0.3s ease',
+                }} onClick={() => swiperRef.current.slideNext()}>
+                    <RightOutlined />
+                </button>
             </div>
         </div>
     );
 }
 
-// Sample data for the testimonials. You can replace this with your own client data.
-const testimonialsData = [
-    {
-        name: "Jane Doe",
-        title: "CEO, InnovateTech",
-        quote: "AetherDigital brought our vision to life with incredible speed and attention to detail. The new website has completely transformed our online presence!",
-        avatar: "https://placehold.co/100x100/3873f3/ffffff?text=JD"
-    },
-    {
-        name: "John Smith",
-        title: "Founder, GreenLeaf Co.",
-        quote: "The SEO and design work from AetherDigital has been a game-changer for our business. Our organic traffic has doubled, and the new design has received incredible feedback from our customers.",
-        avatar: "https://placehold.co/100x100/3873f3/ffffff?text=JS"
-    },
-    {
-        name: "Emily Chen",
-        title: "Creative Director, Studio X",
-        quote: "We needed a partner who could translate our creative vision into a functional web application, and AetherDigital did just that. Their technical expertise is unmatched.",
-        avatar: "https://placehold.co/100x100/3873f3/ffffff?text=EC"
-    },
-    {
-        name: "David Lee",
-        title: "Marketing Manager, Global Corp",
-        quote: "Our marketing campaigns are much more effective now, thanks to the stunning landing pages built by AetherDigital. They are a reliable and innovative team.",
-        avatar: "https://placehold.co/100x100/3873f3/ffffff?text=DL"
-    },
-    {
-        name: "Sarah Miller",
-        title: "Entrepreneur",
-        quote: "I've worked with several developers, but none have matched the quality and efficiency of AetherDigital. Highly recommended for anyone looking to build a professional web presence.",
-        avatar: "https://placehold.co/100x100/3873f3/ffffff?text=SM"
-    },
-    {
-        name: "Michael Brown",
-        title: "Product Lead, Alpha Corp",
-        quote: "The team at AetherDigital is professional and highly skilled. They delivered a product that exceeded our expectations on time and on budget.",
-        avatar: "https://placehold.co/100x100/3873f3/ffffff?text=MB"
-    },
-];
-
-export default function TestimonialSlider() {
-    // State to track the current slide index
-    const [currentSlide, setCurrentSlide] = useState(0);
-
-    // Calculate the total number of slides
-    const totalSlides = testimonialsData.length;
-
-    // Handle moving to the next slide
-    const nextSlide = () => {
-        setCurrentSlide((prevSlide) => (prevSlide + 1) % totalSlides);
-    };
-
-    // Handle moving to the previous slide
-    const prevSlide = () => {
-        setCurrentSlide((prevSlide) => (prevSlide - 1 + totalSlides) % totalSlides);
-    };
-
-    return (
-        <section id="testimonials-section" className="py-16 bg-transparent relative z-10">
-            <div className="max-w-7xl mx-auto px-6">
-                <h2 className="text-4xl font-bold text-center mb-12 text-white">Client Testimonials</h2>
-                
-                <div className="relative overflow-hidden">
-                    <div
-                        className="flex transition-transform duration-500 ease-in-out"
-                        style={{ transform: `translateX(-${currentSlide * 100 / 3}%)` }} // 100 / number of slides
-                    >
-                        {testimonialsData.map((testimonial, index) => (
-                            <TestimonialCard
-                                key={index}
-                                name={testimonial.name}
-                                title={testimonial.title}
-                                quote={testimonial.quote}
-                                avatar={testimonial.avatar}
-                            />
-                        ))}
-                    </div>
-                </div>
-
-                <div className="flex justify-center mt-8 space-x-4">
-                    <button
-                        onClick={prevSlide}
-                        className="p-3 rounded-full bg-gray-800 text-[#3873f3] hover:bg-gray-700 transition"
-                        aria-label="Previous testimonial"
-                    >
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path></svg>
-                    </button>
-                    <button
-                        onClick={nextSlide}
-                        className="p-3 rounded-full bg-gray-800 text-[#3873f3] hover:bg-gray-700 transition"
-                        aria-label="Next testimonial"
-                    >
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
-                    </button>
-                </div>
-            </div>
-        </section>
-    );
-}

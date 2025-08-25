@@ -17,19 +17,19 @@ export default function landingPage() {
         <Body />
       </section>
       
-      <section id="service" className= 'ourSercice-Sect' style={{ padding: '80px 0'}}>
+      <section id="service" className= 'ourSercice-Sect' style={{ padding: '80px'}}>
         <OurService />
       </section>
 
-      <section id="projects" style={{ padding: '80px 0'}}>
+      <section id="projects" style={{ padding: '80px'}}>
         <Projects />
       </section>
 
-      <section id="chooseus" style={{ padding: '80px 0'}}>
+      <section id="chooseus" style={{ padding: '80px'}}>
         <ChooseUs />
       </section>
 
-      <section id="testimoni">
+      <section id="testimoni" style={{ padding: '80px'}}>
         <Testimoni />
       </section>
     </>
