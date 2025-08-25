@@ -20,16 +20,16 @@ export default function Header() {
     },
     {
       name: "Projects",
-      direct: "Projects"
+      direct: "projects"
     },
     {
       name: "About",
-      direct: "about"
+      direct: "chooseus"
     },
     {
-      name: "Contact",
-      direct: "chooseus"
-    }
+      name: "Reviews",
+      direct: "testimoni"
+    },
   ]
 
   const scrollToSection = (sectionId) => {
@@ -44,22 +44,24 @@ export default function Header() {
   };
 
   return (
-    <div className='header-LandingPage'>
-      <div className="brandText-Logo">
-        <Image src="/Gambar_WhatsApp_2025-08-15_pukul_08.17.55_86843d8c-removebg-preview.png" alt="Aether Digital Logo" width={60} height={60} />
-        <p className="brand-text" style={{ color: '#64badf' }}>Aether Digital</p>
-      </div>
+    <>
+      <div className='header-LandingPage'>
+        <div className="brandText-Logo">
+          <Image src="/Gambar_WhatsApp_2025-08-15_pukul_08.17.55_86843d8c-removebg-preview.png" alt="Aether Digital Logo" width={60} height={60} />
+          <p className="brand-text" style={{ color: '#64badf' }}>Aether Digital</p>
+        </div>
 
-      <div className="navBar desktop-nav">
-        {navBar.map((item, index) => (
-          <button
-            key={index}
-            className="nav-link"
-            style={{ color: '#AABBCC', background: 'none', border: 'none', cursor: 'pointer' }}
-            onClick={() => scrollToSection(item.direct)}
+        <div className="navBar desktop-nav">
+          {navBar.map((item, index) => (
+            <a
+              key={index}
+              className="nav-link"
+              style={{ color: '#AABBCC', background: 'none', border: 'none', cursor: 'pointer' }}
+              onClick={() => scrollToSection(item.direct)}
+              href={`/#${item.direct}`}
           >
-            {item.name}
-          </button>
+          {item.name}
+        </a>
         ))}
       </div>
 
@@ -92,6 +94,7 @@ export default function Header() {
           ))}
         </div>
       </div>
-    </div>
+    </div >
+    </>
   )
 }
