@@ -1,0 +1,9 @@
+.ChooseUsTitle {
+    font-size: 4.63vh;
+}
+
+@media (max-width: 768px) {
+    .ChooseUsTitle {
+        font-size: 30px;
+    }
+}

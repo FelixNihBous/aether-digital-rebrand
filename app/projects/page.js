@@ -11,6 +11,8 @@ import 'swiper/css/navigation';
 
 import '../swiper/style.css';
 
+import '../css/Project.css'
+
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules';
 import { Image } from 'antd';
@@ -59,8 +61,8 @@ export default function SwiperProjects() {
     const swiperRef = useRef(null);
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px', overflow: 'hidden' }}>
-            <h1 className="font=bold" style={{ fontSize: '50px' }}>Our Projects</h1>
+        <div className='ourProjectContainer' style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px', overflow: 'hidden' }}>
+            <h1 className="ourProjectTitle">Our Projects</h1>
             <Swiper
                 onSwiper={(swiper) => {
                     swiperRef.current = swiper;

@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import '../css/ChooseUs.css'
 
 export default function ChooseUs() {
   return (
@@ -7,7 +8,7 @@ export default function ChooseUs() {
       <section className="py-16 bg-[#1a1a2e] relative z-10">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1">
-                <h2 className="text-4xl font-bold mb-6 text-white">Why Choose AetherDigital?</h2>
+                <h2 className="ChooseUsTitle  font-bold mb-6 text-white">Why Choose AetherDigital?</h2>
                 <p className="text-gray-400 mb-6 max-w-md">
                     We&apos;re not just developers; we&apos;re partners in your digital journey. We combine creative design with technical excellence to deliver exceptional results.
                 </p>

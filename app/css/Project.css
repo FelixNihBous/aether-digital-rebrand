@@ -1,0 +1,10 @@
+.ourProjectTitle {
+    font-size: 4.63vh;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .ourProjectContainer h1{
+    font-size: 30px;
+  }
+}

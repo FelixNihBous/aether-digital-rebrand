@@ -1,0 +1,9 @@
+.testimoniTitle {
+    font-size: 4.63vh;
+}
+
+@media (max-width: 768px) {
+    .testimoniTitle {
+        font-size: 4.63vh;
+    }
+}
