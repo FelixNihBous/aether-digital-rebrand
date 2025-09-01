@@ -30,6 +30,10 @@ export default function Header() {
       name: "Reviews",
       direct: "testimoni"
     },
+    {
+      name: "Price List",
+      direct: "pricelist"
+    },
   ]
 
   const scrollToSection = (sectionId) => {

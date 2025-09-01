@@ -4,6 +4,7 @@ import React from 'react'
 import Header from './Header/page'
 import Body from './Body/page'
 import ChooseUs from '../choose-us/page'
+import PriceList from '../pricelist/page'
 import OurService from '../our-service/page'
 import Testimoni from '../testimoni/page'
 import Projects from '../projects/page'
@@ -28,6 +29,10 @@ export default function landingPage() {
 
       <section id="chooseus" style={{ padding: '80px' }}>
         <ChooseUs />
+      </section>
+
+      <section id="pricelist" style={{ padding: '80px' }}>
+        <PriceList />
       </section>
 
       <section id="testimoni" style={{ padding: '80px' }}>

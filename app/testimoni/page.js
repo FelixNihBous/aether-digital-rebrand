@@ -13,7 +13,7 @@ import '../swiper/style.css';
 
 import '../css/Testimonial.css'
 
-// import required modules
+
 import { Pagination, Navigation } from 'swiper/modules';
 import { Image } from 'antd';
 
@@ -60,7 +60,7 @@ export default function Testimoni() {
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px', overflow: 'hidden' }}>
-            <h1 className="testimoniTitle  font=bold" style={{ fontSize: '50px' }}>Reviews</h1>
+            <h1 className="testimoniTitle font-bold text-center mb-12 text-white " >Reviews</h1>
             <Swiper
                 onSwiper={(swiper) => {
                     swiperRef.current = swiper;

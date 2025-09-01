@@ -28,7 +28,7 @@ export default function ChooseUs() {
                 </ul>
             </div>
             <div className="order-1 md:order-2 flex justify-center items-center">
-                <Image src="/WeblogoNew.png" alt="Why Choose Us" className="rounded-xl shadow-lg w-full max-w-md md:max-w-none" width={300} height={300} />
+                <Image src="/Gambar_WhatsApp_2025-08-15_pukul_08.17.55_86843d8c-removebg-preview.png" alt="Why Choose Us" className="rounded-xl shadow-lg w-full" width={300} height={300} />
             </div>
         </div>
     </section>

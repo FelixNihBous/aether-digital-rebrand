@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useRef } from 'react';
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 
@@ -13,48 +12,96 @@ import '../swiper/style.css';
 
 import '../css/Project.css'
 
-// import required modules
+
 import { Pagination, Navigation } from 'swiper/modules';
 import { Image } from 'antd';
 
 
 const projectsData = [
     {
-        title: "Individual Portofolio",
-        description: "A complete design of a Portofolio Website",
+        title: "Individual Portfolio",
+        description: "A complete design of a Portfolio Website",
         imageUrl: "https://i.ibb.co.com/jPFRFYrK/image.png",
-        projectUrl: "https://github.com/FelixNihBous/Portofolio"
+        projectUrl: "https://github.com/FelixNihBous/Portofolio",
+        tech: ["HTML", "CSS", "JavaScript"]
     },
     {
         title: "Recipe Book Library Website",
         description: "A Website that shows us a lot of food recipe from all of the world",
         imageUrl: "https://iili.io/FyDkSVa.md.png",
-        projectUrl: "https://github.com/FelixNihBous/recipe-book"
+        projectUrl: "https://github.com/FelixNihBous/recipe-book",
+        tech: ["React", "CSS", "API Integration"]
     },
     {
         title: "Dessert Shop Website",
-        description: "A prototype for a food order app, including user flows, UI/UX design, and a functional front-end (Chekout and Add to cart).",
+        description: "A prototype for a food order app, including user flows, UI/UX design, and a functional front-end (Checkout and Add to cart).",
         imageUrl: "https://iili.io/FyDt8zJ.md.png",
-        projectUrl: "https://github.com/FelixNihBous/dessertshop-assignment"
+        projectUrl: "https://github.com/FelixNihBous/dessertshop-assignment",
+        tech: ["React", "JavaScript", "CSS"]
     },
     {
-        title: "Data Visualization Dashboard",
-        description: "An interactive dashboard built with D3.js to visualize complex data sets in a clear and engaging way.",
-        imageUrl: "https://placehold.co/400x200/38f38c/ffffff?text=Project+4",
-        projectUrl: "#"
+        title: "E-Commerce Platform",
+        description: "A full-stack e-commerce solution with user authentication, payment processing, and admin dashboard built with Next.js.",
+        imageUrl: "https://placehold.co/400x200/38f38c/ffffff?text=Next.js+E-Commerce",
+        projectUrl: "#",
+        tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Stripe"]
     },
     {
-        title: "SaaS Marketing Page",
-        description: "A high-converting landing page for a new software-as-a-service product, designed to capture leads and showcase key features.",
-        imageUrl: "https://placehold.co/400x200/f33838/ffffff?text=Project+5",
-        projectUrl: "#"
+        title: "Real Estate Listing App",
+        description: "A modern real estate platform with advanced search, map integration, and property management features using Next.js and MongoDB.",
+        imageUrl: "https://placehold.co/400x200/f39c12/ffffff?text=Real+Estate+App",
+        projectUrl: "#",
+        tech: ["Next.js", "MongoDB", "Tailwind CSS", "Mapbox API"]
     },
     {
-        title: "Blog Platform",
-        description: "A custom blog platform with a powerful content management system and a responsive, minimalist design.",
-        imageUrl: "https://placehold.co/400x200/38c2f3/ffffff?text=Project+6",
-        projectUrl: "#"
+        title: "Social Media Dashboard",
+        description: "A comprehensive social media management tool with analytics, scheduling, and multi-platform integration built with Next.js.",
+        imageUrl: "https://placehold.co/400x200/9b59b6/ffffff?text=Social+Dashboard",
+        projectUrl: "#",
+        tech: ["Next.js", "Redis", "Chart.js", "Social APIs"]
     },
+    {
+        title: "Task Management System",
+        description: "A collaborative project management tool with real-time updates, team collaboration, and advanced filtering capabilities.",
+        imageUrl: "https://placehold.co/400x200/e74c3c/ffffff?text=Task+Manager",
+        projectUrl: "#",
+        tech: ["React", "Node.js", "Socket.io", "MySQL"]
+    },
+    {
+        title: "Weather Forecast App",
+        description: "A beautiful weather application with location-based forecasts, interactive maps, and detailed weather analytics using Next.js.",
+        imageUrl: "https://placehold.co/400x200/3498db/ffffff?text=Weather+App",
+        projectUrl: "#",
+        tech: ["Next.js", "TypeScript", "Weather API", "Geolocation"]
+    },
+    {
+        title: "Learning Management System",
+        description: "An educational platform with course creation, student progress tracking, and interactive learning modules built with Next.js.",
+        imageUrl: "https://placehold.co/400x200/27ae60/ffffff?text=LMS+Platform",
+        projectUrl: "#",
+        tech: ["Next.js", "Firebase", "Tailwind CSS", "Video.js"]
+    },
+    {
+        title: "Cryptocurrency Tracker",
+        description: "A real-time crypto portfolio tracker with price alerts, news integration, and advanced charting features.",
+        imageUrl: "https://placehold.co/400x200/f1c40f/ffffff?text=Crypto+Tracker",
+        projectUrl: "#",
+        tech: ["React", "Redux", "CoinGecko API", "Chart.js"]
+    },
+    {
+        title: "AI Chat Application",
+        description: "An intelligent chat application with AI integration, real-time messaging, and smart conversation features using Next.js.",
+        imageUrl: "https://placehold.co/400x200/8e44ad/ffffff?text=AI+Chat+App",
+        projectUrl: "#",
+        tech: ["Next.js", "OpenAI API", "Socket.io", "Tailwind CSS"]
+    },
+    {
+        title: "Fitness Tracking App",
+        description: "A comprehensive fitness application with workout plans, progress tracking, and nutrition monitoring built with React Native.",
+        imageUrl: "https://placehold.co/400x200/e67e22/ffffff?text=Fitness+Tracker",
+        projectUrl: "#",
+        tech: ["React Native", "Firebase", "Redux", "Health APIs"]
+    }
 ];
 
 export default function SwiperProjects() {
@@ -94,7 +141,24 @@ export default function SwiperProjects() {
                     <SwiperSlide key={index} style={{ display: 'flex', flexDirection: 'column', backgroundColor: '#101828', borderRadius: '20px', padding: '20px', gap: '10px' }}>
                         <Image src={project.imageUrl} alt={project.title} style={{ borderRadius: '20px' }} />
                         <h2 className="">{project.title}</h2>
-                        <p className="" style={{ fontSize: '12px' }}>{project.description}</p>
+                        <p className="" style={{ fontSize: '12px', marginBottom: '10px' }}>{project.description}</p>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>
+                            {project.tech.map((tech, techIndex) => (
+                                <span 
+                                    key={techIndex} 
+                                    style={{ 
+                                        backgroundColor: '#374151', 
+                                        color: '#ffffff', 
+                                        padding: '4px 8px', 
+                                        borderRadius: '12px', 
+                                        fontSize: '10px',
+                                        fontWeight: '500'
+                                    }}
+                                >
+                                    {tech}
+                                </span>
+                            ))}
+                        </div>
                     </SwiperSlide>
                 ))}
 
