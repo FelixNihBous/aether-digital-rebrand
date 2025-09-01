@@ -110,6 +110,7 @@ export default function SwiperProjects() {
     return (
         <div className='ourProjectContainer' style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px', overflow: 'hidden' }}>
             <h1 className="ourProjectTitle">Our Projects</h1>
+            <div className="border-b-2 border-blue-900 w-24 mx-auto mb-8" />
             <Swiper
                 onSwiper={(swiper) => {
                     swiperRef.current = swiper;

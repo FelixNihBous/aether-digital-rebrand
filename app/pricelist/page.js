@@ -1,12 +1,14 @@
 import React from 'react';
 import '../mobile-fix.css'
+import '../css/PriceList.css'
 
 export default function PriceList() {
     return(
         <>
         <section className="pricelist py-16 relative z-10 flex justify-center items-center pt-10">
             <div className="max-w-7xl mx-auto px-6 flex flex-col justify-center">
-                <h2 className="text-4xl font-bold text-center mb-12 text-white">Price List</h2>
+                <h2 className="text-4xl font-bold text-center mb-5 text-white">Price List</h2>
+                <div className="border-b-2 border-blue-900 w-24 mx-auto mb-8" />
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
                     <div className="bg-gray-900 p-8 rounded-2xl border border-gray-800 hover:border-gray-700 transition-all duration-300">
                         <div className="text-[#3873f3] mb-4 transition duration-300 hover:scale-110">

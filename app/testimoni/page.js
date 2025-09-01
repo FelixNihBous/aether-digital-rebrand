@@ -60,7 +60,8 @@ export default function Testimoni() {
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px', overflow: 'hidden' }}>
-            <h1 className="testimoniTitle font-bold text-center mb-12 text-white " >Reviews</h1>
+            <h1 className="testimoniTitle font-bold text-center  text-white " >Reviews</h1>
+            <div className="border-b-2 border-blue-900 w-24 mx-auto mb-8" />
             <Swiper
                 onSwiper={(swiper) => {
                     swiperRef.current = swiper;

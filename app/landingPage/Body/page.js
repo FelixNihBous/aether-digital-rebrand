@@ -5,9 +5,25 @@ import React from 'react'
 
 export default function Body() {
   return (
-    <div className='bodyContainer flex justify-center items-center' style={{ height: '90vh' }}>
-      <div className="bodyText text-center flex flex-col gap-5 justify-center items-center px-4">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+    <div 
+      className='bodyContainer flex justify-center items-center relative' 
+      style={{ 
+        height: '90vh',
+        backgroundImage: 'url(/high-rise-buildings-daytime.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
+      <div 
+        className="absolute inset-0"
+        style={{
+          background: 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6))'
+        }}
+      ></div>
+      
+      <div className="bodyText text-center flex flex-col gap-5 justify-center items-center px-4 relative z-10">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-white">
           Crafting Digital <br className="hidden sm:block" /> Experiences That <span className="text-blue-500">Inspire</span>.
         </h2>
         <p className="font-bold py-4 px-4 text-[#64badf] max-w-2xl">

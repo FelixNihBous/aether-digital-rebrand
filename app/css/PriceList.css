@@ -1,0 +1,8 @@
+@media screen and (max-width: 768px) {
+    .bg-gray-900 {
+        padding: 20px !important;
+        margin: 0 -2.5rem; 
+        text-align: center;
+    }
+    
+}
