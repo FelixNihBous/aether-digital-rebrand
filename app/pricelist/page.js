@@ -24,7 +24,7 @@ export default function PriceList() {
                             <li>• Delivery in 2 or 4 weeks</li>
                         </ul>
                         <div className="text-center mt-27">
-                            <span className="text-3xl font-bold text-white">$500</span>
+                            <span className="text-3xl font-bold text-white">Rp. 9.200.000</span>
                         </div>
                         <button className="w-full mt-4 bg-[#3873f3] hover:bg-[#2563eb] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300">
                             Get Started
@@ -50,7 +50,7 @@ export default function PriceList() {
                             <li>• Delivery in 4 weeks</li>
                         </ul>
                         <div className="text-center mt-13">  
-                            <span className="text-3xl font-bold text-white">$1,200</span>
+                            <span className="text-3xl font-bold text-white">Rp. 18.550.000</span>
                         </div>
                         <button className="w-full mt-4 bg-[#3873f3] hover:bg-[#2563eb] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300">
                             Get Started
@@ -74,7 +74,7 @@ export default function PriceList() {
                             <li>• Delivery in 6 weeks</li>
                         </ul>
                         <div className="text-center mt-6">
-                            <span className="text-3xl font-bold text-white">$3,500</span>
+                            <span className="text-3xl font-bold text-white">Rp. 22.250.000</span>
                         </div>
                         <button className="w-full mt-4 bg-[#3873f3] hover:bg-[#2563eb] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300">
                             Get Started
